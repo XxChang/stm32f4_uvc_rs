@@ -1,0 +1,23 @@
+[package]
+name = "stm32f4_uvc_rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cortex-m = "0.7.3"
+cortex-m-rt = "0.7.0"
+rtt-target = { version =  "0.3.1", features = ["cortex-m"] }
+panic-rtt-target = { version =  "0.1.2", features = ["cortex-m"] }
+usb-device = "0.2.9"
+stm32-usbd = "0.6.0"
+
+[dependencies.stm32f4xx-hal]
+version = "0.15.0"
+features = ["stm32f407", "otg-fs", "usb_fs"]
+
+[[bin]]
+name = "stm32f4_uvc_rs"
+test = false
+bench = false
